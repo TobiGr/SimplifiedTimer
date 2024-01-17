@@ -58,6 +58,8 @@ void loop()
 ```
 
 # License
+This library is a fork of [SimpleTimer](https://github.com/kiryanenko/SimpleTimer) which was originally released by Alexander Kiryanenko under the MIT license.
+
 Copyright (c) 2019 Alexander Kiryanenko.
 Copyright (c) 2024 Tobias Groza.
 
