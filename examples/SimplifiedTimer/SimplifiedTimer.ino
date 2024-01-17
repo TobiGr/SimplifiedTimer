@@ -1,9 +1,9 @@
-#include <SimpleTimer.h>
+#include <SimplifiedTimer.h>
 
 // Create a first timer and specify its interval in milliseconds
-SimpleTimer firstTimer(2000);
+SimplifiedTimer firstTimer(2000);
 // Create a second timer
-SimpleTimer secondTimer;
+SimplifiedTimer secondTimer;
 
 void setup()
 {

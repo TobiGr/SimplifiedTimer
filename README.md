@@ -1,17 +1,30 @@
 Simple Arduino Timer
 ====================
 
-A simple Arduino library for work with time. 
+A simple Arduino library to work with time.
+
+## API
+### Class `SimplifiedTimer`
+#### Constructor
+`SimplifiedTimer(uint64_t interval)`: Creates a new timer instance with the given interval in ms. The timer is enabled by default.
+#### Methods
+`bool isReady()`: Check if timer is ready. Returns `true` if the timer is ready
+`void setInterval(uint64_t interval)`: Set the timer's interval. 
+`void setInterval(uint64_t interval)`: Set the timer interval. Param `interval` is the interval in ms
+`void reset()`: Reset the timer. It will be ready again once the set interval has passed.
+`void disable()`: Disable the timer. It will not be ready although the time is up.
+`void enable()`: Enable the timer. A disabled timer is enabled again
+
 
 ## Example
 
 ```cpp
-#include <SimpleTimer.h>
+#include <SimplifiedTimer.h>
 
 // Create a first timer and specify its interval in milliseconds
-SimpleTimer firstTimer(2000);
+SimplifiedTimer firstTimer(2000);
 // Create a second timer
-SimpleTimer secondTimer;
+SimplifiedTimer secondTimer;
 
 void setup()
 {
@@ -42,8 +55,10 @@ void loop()
         
     }
 }
-
 ```
 
 # License
-Copyright (c) 2019 Alexander Kiryanenko. Licensed under the MIT license.
+Copyright (c) 2019 Alexander Kiryanenko.
+Copyright (c) 2024 Tobias Groza.
+
+Licensed under the MIT license.
