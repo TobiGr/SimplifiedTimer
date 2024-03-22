@@ -18,7 +18,7 @@ public:
     /// \param interval An interval in msec
     explicit SimplifiedTimer(uint64_t interval = 0);
     /// Check if timer is ready
-    /// \return True if is timer is ready
+    /// \return True if is timer is ready and enabled
     bool isReady();
     /// Set the time interval
     /// \param interval An interval in msec
