@@ -5,17 +5,17 @@
 
 #include "SimplifiedTimer.h"
 
-SimplifiedTimer::SimplifiedTimer(uint64_t interval) : _interval(interval) {
+SimplifiedTimer::SimplifiedTimer(uint64_t duration) : _duration(duration) {
     _start = millis();
     _enabled = true;
 }
 
 bool SimplifiedTimer::isReady() {
-    return _enabled && _start + _interval <= millis();
+    return _enabled && _start + _duration <= millis();
 }
 
-void SimplifiedTimer::setInterval(uint64_t interval) {
-    _interval = interval;
+void SimplifiedTimer::setInterval(uint64_t duration) {
+    _duration = duration;
 }
 
 void SimplifiedTimer::reset() {

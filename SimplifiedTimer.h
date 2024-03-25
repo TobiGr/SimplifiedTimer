@@ -9,27 +9,43 @@
 #include <Arduino.h>
 
 class SimplifiedTimer {
+  private:
     uint64_t _start;
-    uint64_t _interval;
+    uint64_t _duration;
     bool _enabled = true;
-
-public:
-    /// Constructor, that initialize timer
-    /// \param interval An interval in msec
-    explicit SimplifiedTimer(uint64_t interval = 0);
-    /// Check if timer is ready
-    /// \return True if is timer is ready and enabled
+  public:
+    /*!
+     * Constructor that initializes the timer.
+     * @param duration the duration in ms for the timer to take until it is up
+     */
+    explicit SimplifiedTimer(uint64_t duration = 0);
+    /*!
+     * Check if timer is up and enabled.
+     * @return True if is timer is up and enabled
+     */ 
     bool isReady();
-    /// Set the time interval
-    /// \param interval An interval in msec
-    void setInterval(uint64_t interval);
-    /// Reset a timer
+    /*!
+     * Set the duration for the timer to take until it is up.
+     * @param param duration a duration in ms
+     */ 
+    void setInterval(uint64_t duration);
+    /*!
+     * Reset the timer.
+     * It will take the specified duration until the timer is ready again. 
+     */
     void reset();
-    /// Disable the timer. It will not be ready although the time is up
+    /*!
+     * Disable the timer. It will not be ready although the time is up.
+     */
     void disable();
-    /// Enable the timer. A disabled timer is enabled again
+    /*!
+     * Enable the timer. A disabled timer is enabled again. The timer might be ready immideatly.
+     */ 
     void enable();
-    /// Check if the timer is enabled
+    /*!
+     * Check if the timer is enabled.
+     * @return true if the timer is enabled, otherwise false
+     */ 
     bool isEnabled();
 };
 
